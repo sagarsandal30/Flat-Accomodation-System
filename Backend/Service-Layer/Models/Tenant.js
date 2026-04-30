@@ -56,7 +56,6 @@ const tenantSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
-
     rentAmount: {
       type: Number,
       required: true,

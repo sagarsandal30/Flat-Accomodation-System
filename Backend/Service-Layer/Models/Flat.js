@@ -8,10 +8,20 @@ const flatSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    flatType:{
+        type: String,
+        required: true,
+        enum:["1BHK","2BHK","3BHK"]
+    },
     buildingName: {
         type: String,
         required: true,
         trim: true,
+    },
+    floor:{
+        type: Number,
+        required: true,
+        min: 0,
     },
     address: {
         type: String,
@@ -24,8 +34,8 @@ const flatSchema = new mongoose.Schema({
     },
     availabilityStatus: {
         type: String,
-        enum: ["Available", "Occupied", "Under Maintenance"],
-        default: "Available",
+        enum: ["Vacant", "Occupied", "Under Maintenance"],
+        required:true
     },
     // 🔗 Reference to Owner
     ownerId: {

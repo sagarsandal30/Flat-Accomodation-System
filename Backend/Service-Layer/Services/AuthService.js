@@ -46,8 +46,6 @@ const loginUser = async (loginData) => {
     throw new Error("Invalid Password");
   }
  
-  
-
   const payload = {
     id: user._id,
     role: user.role,
@@ -58,7 +56,6 @@ const loginUser = async (loginData) => {
 
   const userObj = user.toObject();
   delete userObj.password;
-  delete userObj.confirmPassword;
 
  
   return { user: userObj,

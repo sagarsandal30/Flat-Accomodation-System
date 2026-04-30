@@ -48,6 +48,5 @@ const flatSchema = new mongoose.Schema({
 },
     {
         timestamps: true,
-
 }
 );

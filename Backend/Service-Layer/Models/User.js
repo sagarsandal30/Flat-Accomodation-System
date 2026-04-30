@@ -3,12 +3,17 @@ const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema(
   {
-  
-    fullName: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
     },
+    lastName:{
+      type: String,
+      required: true,
+      trim: true,
+    },
+
 
     email: {
       type: String,
@@ -29,28 +34,12 @@ const UserSchema = new mongoose.Schema(
       required: true,
       minlength: 6,
     },
-    confirmPassword:{
-        type: String,
-        required: true,
-        minlength: 6,
-    },
-
     // 👥 Role
     role: {
       type: String,
-      enum: ["Owner", "Tenant"],   // 🔥 Changed
-      default: "Tenant",
+      enum: ["owner", "tenant"],   // 🔥 Changed
+      default: "tenant",
     },
-
-    // 🏢 Owner-specific info
-    ownedFlats: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Flat",
-      },
-    ],
-
-
     // 🖼 Profile
     profileImage: {
       type: String,
@@ -76,6 +65,5 @@ UserSchema.pre("save", async function (next) {
 UserSchema.methods.comparePassword = async function (userPassword) {
   return await bcrypt.compare(userPassword, this.password);
 };
-
 
 module.exports=mongoose.model("User" , UserSchema);

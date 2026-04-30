@@ -1,4 +1,4 @@
-const {loginUser, registerUser} = require("../../Service-Layer/Services/AuthService");
+const {loginUser, registerUser,handleLogout} = require("../../Service-Layer/Services/AuthService");
 
 const register = async (req, res, next) => {
   try {
@@ -37,5 +37,24 @@ const login = async (req, res, next) => {
   }
 };
 
+const logout=async(req,res)=>{
+  try{
+    console.log("inside controller latest")
+  userId=req.user.id;
+  console.log(userId);
+const user =await handleLogout(userId);
+      res.status(200).json({
+       success: true,
+        user 
+      });
+  }catch(error){
+    res.status(400).json({ 
+      success: false, 
+      message: error.message 
+    });
+  } 
+  
+}
+
 // Export controllers to attach them to routes
-module.exports = { register, login };
+module.exports = { register, login,logout };

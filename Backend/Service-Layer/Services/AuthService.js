@@ -62,6 +62,16 @@ const loginUser = async (loginData) => {
      token
      };
 };
+const handleLogout=async(userId)=>{
+console.log("inside service")
+  const existingUser=await User.findById(userId).select('-password');
+  console.log("JNJNJJ",existingUser);
+  if(!existingUser){
+    throw new Error("User not found");
+  }
+  return existingUser;
+
+}
 
 
-module.exports = {registerUser, loginUser};
+module.exports = {registerUser, loginUser, handleLogout};

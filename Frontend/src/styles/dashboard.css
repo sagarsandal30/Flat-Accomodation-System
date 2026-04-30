@@ -1,0 +1,95 @@
+/* Owner Dashboard */
+.dash-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 28px; }
+@media (min-width: 1024px) { .dash-stats { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 480px) { .dash-stats { grid-template-columns: 1fr; } }
+
+/* Info Card (flat detail, tenant info) */
+.info-card { background: var(--white); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--border-light); }
+.info-card-title { font-size: 0.875rem; font-weight: 700; color: var(--black); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.info-card-title svg { color: var(--text-secondary); }
+.info-row { display: flex; align-items: flex-start; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-light); font-size: 0.85rem; gap: 12px; }
+.info-row:last-child { border-bottom: none; padding-bottom: 0; }
+.info-key { color: var(--text-secondary); font-weight: 500; flex-shrink: 0; }
+.info-val { color: var(--black); font-weight: 600; text-align: right; }
+
+/* Activity Feed */
+.activity-feed { display: flex; flex-direction: column; gap: 0; }
+.activity-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-light); align-items: flex-start; }
+.activity-item:last-child { border-bottom: none; }
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.activity-text { font-size: 0.85rem; color: var(--text-primary); font-weight: 500; }
+.activity-time { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Flat Card (owner panel) */
+.flat-list-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow 0.2s; }
+.flat-list-card:hover { box-shadow: var(--shadow-card); }
+.flat-list-img { height: 160px; background-size: cover; background-position: center; position: relative; }
+.flat-list-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%); }
+.flat-list-body { padding: 16px 18px; }
+.flat-list-no { font-size: 1rem; font-weight: 700; color: var(--black); }
+.flat-list-building { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px; }
+.flat-list-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 14px; }
+.flat-list-meta span { display: flex; align-items: center; gap: 4px; }
+.flat-list-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border-light); }
+.flat-list-rent { font-size: 1rem; font-weight: 700; color: var(--black); }
+.flat-list-rent span { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
+
+/* Tenant Profile Card */
+.tenant-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; display: flex; gap: 14px; align-items: flex-start; transition: box-shadow 0.2s; }
+.tenant-card:hover { box-shadow: var(--shadow-card); }
+.tenant-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--border-light); display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 700; color: var(--black); flex-shrink: 0; }
+.tenant-name { font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+.tenant-flat { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 8px; }
+.tenant-meta { display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; color: var(--text-muted); }
+.tenant-meta span { display: flex; align-items: center; gap: 5px; }
+.tenant-actions { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+
+/* Payment Card */
+.payment-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.pay-month { font-size: 0.875rem; font-weight: 600; color: var(--black); }
+.pay-flat { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.pay-amount { font-size: 1.1rem; font-weight: 700; color: var(--black); }
+.pay-date { font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px; text-align: right; }
+
+/* Maintenance Card */
+.complaint-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; transition: box-shadow 0.2s; }
+.complaint-card:hover { box-shadow: var(--shadow-card); }
+.complaint-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.complaint-title { font-size: 0.9rem; font-weight: 700; color: var(--black); }
+.complaint-meta { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px; display: flex; gap: 12px; flex-wrap: wrap; }
+.complaint-meta span { display: flex; align-items: center; gap: 4px; }
+.complaint-desc { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+.complaint-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+/* Announcements */
+.announce-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; transition: box-shadow 0.2s; }
+.announce-card:hover { box-shadow: var(--shadow-card); }
+.announce-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.announce-title { font-size: 0.9rem; font-weight: 700; color: var(--black); }
+.announce-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }
+.announce-footer { display: flex; align-items: center; gap: 12px; font-size: 0.75rem; color: var(--text-muted); }
+.announce-icon-badge { display: flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: var(--radius-full); font-size: 0.72rem; font-weight: 700; }
+.announce-high { background: var(--red-light); color: #991b1b; }
+.announce-medium { background: var(--yellow-light); color: #92400e; }
+.announce-low { background: var(--green-light); color: #065f46; }
+
+/* Booking Request Cards */
+.booking-card { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 20px; }
+.booking-name { font-size: 0.9rem; font-weight: 700; color: var(--black); }
+.booking-sub { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 8px; }
+.booking-msg { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; font-style: italic; background: var(--bg); border-radius: var(--radius-sm); padding: 10px 12px; border-left: 3px solid var(--border); }
+.booking-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Tenant Dashboard Specific */
+.tenant-flat-banner { border-radius: var(--radius-lg); overflow: hidden; position: relative; height: 200px; margin-bottom: 24px; }
+.tenant-flat-banner-img { width: 100%; height: 100%; object-fit: cover; }
+.tenant-flat-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%); display: flex; align-items: flex-end; padding: 20px; }
+.tenant-flat-info { color: var(--white); }
+.tenant-flat-no { font-size: 1.5rem; font-weight: 700; }
+.tenant-flat-building { font-size: 0.85rem; opacity: 0.85; }
+
+/* Dashboard 2-col layout */
+.dash-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+.dash-grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .dash-grid-3 { grid-template-columns: 2fr 1fr; } }

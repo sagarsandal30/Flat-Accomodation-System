@@ -1,0 +1,33 @@
+/* Navbar */
+.navbar {
+  position: absolute; top: 0; width: 100%; z-index: 50;
+  padding: 20px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 1.375rem; font-weight: 700; color: var(--white); letter-spacing: -0.03em; cursor: pointer; }
+.nav-menu {
+  display: none;
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(14px);
+  border-radius: var(--radius-full); padding: 8px 24px;
+  align-items: center; gap: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+@media (min-width: 768px) { .nav-menu { display: flex; } }
+.nav-link { font-size: 0.875rem; color: rgba(255,255,255,0.8); transition: color 0.2s; font-weight: 500; }
+.nav-link:hover { color: var(--white); }
+.nav-link.active { color: var(--white); background: rgba(255,255,255,0.2); padding: 4px 14px; border-radius: var(--radius-full); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-btn-login { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 8px 20px; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 600; backdrop-filter: blur(8px); transition: background 0.2s; }
+.nav-btn-login:hover { background: rgba(255,255,255,0.22); }
+.nav-btn-register { background: var(--white); color: var(--black); padding: 8px 20px; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700; transition: box-shadow 0.2s; }
+.nav-btn-register:hover { box-shadow: 0 4px 14px rgba(255,255,255,0.3); }
+
+/* Scrolled Navbar (for non-hero pages) */
+.navbar-solid { position: sticky; top: 0; background: var(--white); box-shadow: var(--shadow-sm); z-index: 100; border-bottom: 1px solid var(--border-light); }
+.navbar-solid .nav-logo { color: var(--black); }
+.navbar-solid .nav-link { color: var(--text-secondary); }
+.navbar-solid .nav-link:hover, .navbar-solid .nav-link.active { color: var(--black); }
+.navbar-solid .nav-link.active { background: var(--border-light); }
+.navbar-solid .nav-menu { background: none; border: none; backdrop-filter: none; }
+.navbar-solid .nav-btn-login { background: var(--bg); color: var(--black); border: 1.5px solid var(--border); }
+.navbar-solid .nav-btn-login:hover { background: var(--border-light); }

@@ -1,0 +1,28 @@
+/* Auth Pages */
+.auth-page { min-height: 100vh; display: flex; }
+.auth-left { flex: 1; display: none; background: var(--black); position: relative; overflow: hidden; }
+@media (min-width: 900px) { .auth-left { display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; } }
+.auth-left-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.35; }
+.auth-left-content { position: relative; z-index: 1; }
+.auth-left-title { font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 12px; }
+.auth-left-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.auth-left-logo { position: absolute; top: 36px; left: 48px; z-index: 1; font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: -0.03em; }
+
+.auth-right { width: 100%; display: flex; align-items: center; justify-content: center; padding: 32px 20px; background: var(--white); }
+@media (min-width: 900px) { .auth-right { width: 440px; flex-shrink: 0; } }
+
+.auth-card { width: 100%; max-width: 380px; }
+.auth-card-logo { font-size: 1.25rem; font-weight: 700; color: var(--black); margin-bottom: 32px; display: block; }
+@media (min-width: 900px) { .auth-card-logo { display: none; } }
+.auth-title { font-size: 1.5rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.auth-sub { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 28px; }
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+.auth-forgot { text-align: right; font-size: 0.8rem; color: var(--text-secondary); margin-top: -8px; cursor: pointer; }
+.auth-forgot:hover { color: var(--black); }
+.auth-divider { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin: 4px 0; }
+.auth-toggle { text-align: center; font-size: 0.875rem; color: var(--text-secondary); margin-top: 16px; }
+.auth-toggle a { color: var(--black); font-weight: 600; cursor: pointer; }
+.auth-toggle a:hover { text-decoration: underline; }
+.auth-role-selector { display: flex; gap: 10px; margin-bottom: 4px; }
+.auth-role-btn { flex: 1; padding: 10px; border-radius: var(--radius-md); border: 1.5px solid var(--border); background: var(--white); font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.18s; }
+.auth-role-btn.active { border-color: var(--black); background: var(--black); color: var(--white); }

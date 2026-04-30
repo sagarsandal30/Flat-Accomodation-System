@@ -97,7 +97,7 @@ export const AuthProvider = ({ children }) => {
     else 
       navigate('/tenant/dashboard');
         // Set axios default header
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+//         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         return { success: true, user };
       }
@@ -111,16 +111,19 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Logout function
-  const logout = async (showMessage = true) => {
+  const logout = async () => {
     try {
       // Call backend logout endpoint if token exists
       if (token) {
-        await axios.post(
+        const response= await axios.post(
           `${APIRoutes.LOGOUT}`,
           {},
-
         );
+console.log("logout data",response.data.user.firstName);
+showToast(`${response.data.user.firstName} Logout Successfully`) 
+
       }
+
     } catch (error) {
       console.error('Logout API error:', error);
       // Continue with frontend logout even if backend fails
@@ -137,13 +140,8 @@ export const AuthProvider = ({ children }) => {
       delete axios.defaults.headers.common['Authorization'];
 
       // Redirect to login
-      navigate('/login');
-
-      // Show toast notification
-      if (showMessage) {
-        showToast('Logged out successfully', 'success');
-      }
-    }
+      navigate('/');
+   }
   };
 
  // Register function
@@ -185,7 +183,7 @@ export const AuthProvider = ({ children }) => {
     token,
     loading,
     login,
-    logout,
+logout,
     registerUser,
     showToast,
     isAuthenticated: !!token
